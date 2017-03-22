@@ -12,11 +12,3 @@ $factory(App\Food::class, [
         'serving' => $faker->word,
         'serving_per_container' => $faker->numberBetween(1,10)
 ]);
-
-$factory(App\Food::class, 'name_potato', [
-        'name' => $faker->lexify('???? potato ?????'),
-]);
-
-$factory(App\Food::class, 'description_potato', [
-        'description' => $faker->lexify('???? potato ?????'),
-]);
