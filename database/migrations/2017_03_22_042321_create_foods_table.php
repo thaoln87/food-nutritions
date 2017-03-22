@@ -14,7 +14,7 @@ class CreateFoodsTable extends Migration
     {
         Schema::create('foods', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->unique()->index();
             $table->integer('brand_id')->nullable()->unsigned();
             $table->foreign('brand_id')->references('id')->on('brands');
             $table->text('description')->nullable();
