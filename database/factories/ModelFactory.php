@@ -22,27 +22,3 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
-
-/**
- * Food's factory
- */
-$factory->define(App\Food::class, function(Faker\Generator $faker) {
-    return [
-        'name' => $faker->name,
-        'description' => $faker->sentence,
-        'serving' => $faker->word,
-        'serving_per_container' => $faker->numberBetween(1,10)
-    ];
-});
-
-$factory->state(App\Food::class, 'name_potato', function ($faker) {
-    return [
-        'name' => $faker->lexify('???? potato ?????'),
-    ];
-});
-
-$factory->state(App\Food::class, 'description_potato', function ($faker) {
-    return [
-        'description' => $faker->lexify('???? potato ?????'),
-    ];
-});
