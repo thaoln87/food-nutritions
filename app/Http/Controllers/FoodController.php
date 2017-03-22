@@ -11,4 +11,9 @@ class FoodController extends Controller
         return view('Food.create');
     }
 
+    public function store()
+    {
+
+    }
+
 }
