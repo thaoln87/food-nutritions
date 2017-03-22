@@ -16,4 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('/food/create', "FoodController@create");
-Route::post('/food/create', "FoodController@store");
+Route::post('/food', "FoodController@store");
