@@ -69,5 +69,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Food extends Model
 {
-    //
+    public static function search($keyword)
+    {
+        return Food::where('name', 'like', '%'. $keyword . '%')
+            ->orWhere('description', 'like', '%' . $keyword . '%')->get();
+    }
 }
