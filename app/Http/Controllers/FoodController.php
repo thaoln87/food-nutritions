@@ -42,6 +42,18 @@ class FoodController extends Controller
         return "OK";
     }
 
+    public function search(Request $request)
+    {
+        $keyword = '';
+        $foods = [];
+        if ($request->isMethod('post'))
+        {
+            $keyword = $request->input('search_text');
+            $foods = Food::search($keyword);
+        }
 
+        return view('Food.search', ['search_text'=>$keyword, 'matchings'=> $foods]);
+
+    }
 
 }

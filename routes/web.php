@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 Route::get('/food/create', "FoodController@create");
 Route::post('/food', "FoodController@store");
+
+Route::get('/food/search', "FoodController@search");
+Route::post('/food/search/', "FoodController@search");
