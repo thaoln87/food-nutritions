@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        {!! Form::open(['url' => '/food']) !!}
+        {!! Form::open(['url' => '/food/search']) !!}
         <h1>@lang('food.search_header')</h1>
         <hr/>
 
@@ -22,8 +22,17 @@
             {!! Form::label('matching', __('food.matching')) !!}
         </div>
 
-        <div class="container">
-
+        <div class="list-group pre-scrollable">
+            @foreach ($matchings as $matching)
+            <a href="#" class="list-group-item">
+                <span class="text-primary">{{$matching->name}}</span>
+                @if($matching->guaranteed)
+                    <span class="glyphicon glyphicon-ok-sign"></span>
+                @endif
+                <br/>
+                {{$matching->serving . ', ' . $matching->calories . ' calories'}}
+            </a>
+            @endforeach
         </div>
 
         {!! Form::close() !!}
