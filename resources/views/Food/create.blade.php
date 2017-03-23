@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <head>
-        <title>Food Nutrition - Create Food</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    </head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <title>Food Nutrition - Create Food</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
 <body>
-    {!! Form::open(['url' => '/food']) !!}
-    {{ Html::tag('div','Enter Nutrition Information')}}
+<div class="container">
+{!! Form::open(['url' => '/food']) !!}
+{{ Html::tag('div','Enter Nutrition Information')}}
 
-    <!-- Brand Form Input -->
+<!-- Brand Form Input -->
     <div class='form-group'>
         {!! Form::label('brand', 'Brand / Restaurant:') !!}
         {!! Form::text('brand', null, ['class' => 'form-control']) !!}
     </div>
 
-    <!-- Food Description Form Input -->
+    <!-- Name Form Input -->
     <div class='form-group'>
-        {!! Form::label('foodDescription', 'Food Description:') !!}
-        {!! Form::text('foodDescription', null, ['placeholder' => 'Chicken Soup', 'class' => 'form-control']) !!}
+        {!! Form::label('name', 'Food Name:') !!}
+        {!! Form::text('name', null, ['class' => 'form-control']) !!}
+    </div>
+
+    <!-- Description Form Input -->
+    <div class='form-group'>
+        {!! Form::label('description', 'Food Description:') !!}
+        {!! Form::text('description', null, ['placeholder' => 'Chicken Soup', 'class' => 'form-control']) !!}
     </div>
 
     {!! Html::tag('h2', 'Nutrition Facts') !!}
@@ -29,14 +39,14 @@
     <div>
         <!-- Serving size Form Input -->
         <div class='form-group'>
-            {!! Form::label('servingSize', 'Serving size:') !!}
-            {!! Form::text('servingSize', null, ['placehodler' => 'e.g. 1/2 cup cooked', 'class' => 'form-control']) !!}
+            {!! Form::label('serving', 'Serving size:') !!}
+            {!! Form::text('serving', null, ['placehodler' => 'e.g. 1/2 cup cooked', 'class' => 'form-control']) !!}
         </div>
 
         <!-- Serving per container Form Input -->
         <div class='form-group'>
-            {!! Form::label('servingPerContainer', 'Serving per container: (about)') !!}
-            {!! Form::text('servingPerContainer', null, ['class' => 'form-control']) !!}
+            {!! Form::label('serving_per_container', 'Serving per container: (about)') !!}
+            {!! Form::text('serving_per_container', null, ['class' => 'form-control']) !!}
         </div>
 
         <div>
@@ -50,8 +60,8 @@
 
                 <!-- Total Fat Form Input -->
                 <div class='form-group'>
-                    {!! Form::label('totalFat', 'Total Fat:') !!}
-                    {!! Form::text('totalFat', null, ['class' => 'form-control']) !!} g
+                    {!! Form::label('total_fat', 'Total Fat:') !!}
+                    {!! Form::text('total_fat', null, ['class' => 'form-control']) !!} g
                 </div>
 
                 <!-- Saturated Form Input -->
@@ -78,6 +88,13 @@
                     {!! Form::text('trans', null, ['class' => 'form-control']) !!} g
                 </div>
 
+                <!-- Cholesterol Form Input -->
+                <div class='form-group'>
+                    {!! Form::label('cholesterol', 'Cholesterol:') !!}
+                    {!! Form::text('cholesterol', null, ['class' => 'form-control']) !!}
+                </div>
+
+
                 <!-- Sodium Form Input -->
                 <div class='form-group'>
                     {!! Form::label('sodium', 'Sodium:') !!}
@@ -92,20 +109,20 @@
 
                 <!-- Total Carbs Form Input -->
                 <div class='form-group'>
-                    {!! Form::label('totalCarbs', 'Total Carbs:') !!}
-                    {!! Form::text('totalCarbs', null, ['class' => 'form-control']) !!} g
+                    {!! Form::label('total_carbs', 'Total Carbs:') !!}
+                    {!! Form::text('total_carbs', null, ['class' => 'form-control']) !!} g
                 </div>
 
                 <!-- Dietary Fiber Form Input -->
                 <div class='form-group'>
-                    {!! Form::label('dietaryFiber', 'Dietary Fiber:') !!}
-                    {!! Form::text('dietaryFiber', null, ['class' => 'form-control']) !!} g
+                    {!! Form::label('dietary_fiber', 'Dietary Fiber:') !!}
+                    {!! Form::text('dietary_fiber', null, ['class' => 'form-control']) !!} g
                 </div>
 
                 <!-- Sugars Form Input -->
                 <div class='form-group'>
-                    {!! Form::label('sugars', 'Sugars:') !!}
-                    {!! Form::text('sugars', null, ['class' => 'form-control']) !!} g
+                    {!! Form::label('sugar', 'Sugars:') !!}
+                    {!! Form::text('sugar', null, ['class' => 'form-control']) !!} g
                 </div>
 
                 <!-- Protein Form Input -->
@@ -118,14 +135,14 @@
             <div>
                 <!-- Vitamin A Form Input -->
                 <div class='form-group'>
-                    {!! Form::label('vitaminA', 'Vitamin A:') !!}
-                    {!! Form::text('vitaminA', null, ['class' => 'form-control']) !!} %
+                    {!! Form::label('vitamin_a', 'Vitamin A:') !!}
+                    {!! Form::text('vitamin_a', null, ['class' => 'form-control']) !!} %
                 </div>
 
                 <!-- Vitamin C Form Input -->
                 <div class='form-group'>
-                    {!! Form::label('vitaminC', 'Vitamin C:') !!}
-                    {!! Form::text('vitaminC', null, ['class' => 'form-control']) !!} %
+                    {!! Form::label('vitamin_c', 'Vitamin C:') !!}
+                    {!! Form::text('vitamin_c', null, ['class' => 'form-control']) !!} %
                 </div>
 
                 <!-- Calcium Form Input -->
@@ -147,7 +164,7 @@
     {!! Html::tag('div', 'Percent Daily Value are based on a 2000 calorie diet. Your daily value may be higher or lower depending on your calorie needs') !!}
 
     Help us to grow our food database
-    {!! Form::checkbox('published', 'Yes, let other members use this food') !!}
+    {!! Form::checkbox('published', 0, false, ['text' => 'Yes, let other members use this food']) !!}
 
     <div>
         {!! Form::submit('Save') !!}
@@ -156,5 +173,6 @@
     </div>
 
     {!! Form::close() !!}
+</div>
 </body>
 </html>
