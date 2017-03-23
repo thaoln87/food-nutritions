@@ -69,9 +69,38 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Food extends Model
 {
+    protected $fillable = [
+        'name',
+        'brand_id',
+        'description',
+        'image',
+        'serving',
+        'serving_per_container',
+        'calories',
+        'total_fat',
+        'saturated',
+        'polyunsaturated',
+        'monounsaturated',
+        'trans',
+        'cholesterol',
+        'sodium',
+        'potassium',
+        'total_carbs',
+        'dietary_fiber',
+        'sugar',
+        'protein',
+        'vitamin_a',
+        'vitamin_c',
+        'calcium',
+        'iron',
+        'guaranteed',
+        'published',
+        'enabled',
+    ];
+
     public static function search($keyword)
     {
-        return Food::where('name', 'like', '%'. $keyword . '%')
+        return Food::where('name', 'like', '%' . $keyword . '%')
             ->orWhere('description', 'like', '%' . $keyword . '%')->get();
     }
 }

@@ -19,5 +19,21 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Brand extends Model
 {
-    //
+    /**
+     * return a brand if it exists otherwise create it then return.
+     * @param $brandName
+     * @return Brand
+     */
+    public static function getOrCreate($brandName)
+    {
+        $brand = Brand::whereName($brandName)->get()->first();
+
+        if ($brand == null) {
+            $brand = new Brand();
+            $brand->name = $brandName;
+            $brand->save();
+
+        }
+        return $brand;
+    }
 }
