@@ -45,6 +45,7 @@ class FoodController extends Controller
     {
         $keyword = '';
         $foods = [];
+
         if ($request->isMethod('post'))
         {
             $keyword = $request->input('search_text');
@@ -52,7 +53,9 @@ class FoodController extends Controller
         }
 
         return view('Food.search', ['search_text'=>$keyword, 'matchings'=> $foods]);
-
     }
 
+    public function retrieve($id) {
+        return Food::find($id);
+    }
 }

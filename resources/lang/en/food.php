@@ -13,5 +13,6 @@ return [
     'matching' => 'Matching foods:',
     'search' => 'Search',
     'search_example' => 'e.g. brocolli',
+    'nutrition_facts' => 'Nutrition Facts',
 
 ];
