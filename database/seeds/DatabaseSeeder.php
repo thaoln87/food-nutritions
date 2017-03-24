@@ -1,7 +1,13 @@
 <?php
 
+use database\seeds\FoodsTableSeeder;
 use Illuminate\Database\Seeder;
 
+/**
+ * Class DatabaseSeeder
+ *
+ * Run 'composer dump-autoload' if the seeder class is not found.
+ */
 class DatabaseSeeder extends Seeder
 {
     /**

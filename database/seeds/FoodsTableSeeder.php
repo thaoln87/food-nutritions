@@ -1,5 +1,7 @@
 <?php
 
+namespace database\seeds;
+
 use Illuminate\Database\Seeder;
 
 // composer require laracasts/testdummy
@@ -9,6 +11,6 @@ class FoodsTableSeeder extends Seeder
 {
     public function run()
     {
-        TestDummy::times(50)->create(App\Food::class);
+        TestDummy::times(50)->create(\App\Food::class);
     }
 }
