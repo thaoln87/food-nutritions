@@ -9,9 +9,7 @@
 namespace tests\integration;
 
 use App\Food;
-use Faker\Generator;
-use Laracasts\TestDummy\Factory;
-use Laracasts\TestDummy\FakerAdapter;
+
 use PHPUnit\Framework\Assert;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
