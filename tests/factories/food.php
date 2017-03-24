@@ -10,5 +10,6 @@ $factory(App\Food::class, [
         'name' => $faker->name,
         'description' => $faker->sentence,
         'serving' => $faker->word,
-        'serving_per_container' => $faker->numberBetween(1,10)
+        'serving_per_container' => $faker->numberBetween(1,10),
+        'guaranteed' => $faker->boolean
 ]);
