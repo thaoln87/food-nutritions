@@ -1,0 +1,12 @@
+hr.thick-3
+{
+    height:3px;
+    border:none;
+    color:#5e5e5e;
+    background-color:#8c8c8c;
+}
+
+no-padding
+{
+    padding: 0 !important;
+}

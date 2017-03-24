@@ -12,6 +12,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('stylesheets')
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="<?= asset('js/jquery.min.js') ?>"></script>
+    <script src="<?= asset('js/bootstrap.min.js') ?>"></script>
 </head>
 <body>
     <div id="app">
@@ -49,10 +55,5 @@
 
         @yield('content')
     </div>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="<?= asset('js/jquery.min.js') ?>"></script>
-    <script src="<?= asset('js/bootstrap.min.js') ?>"></script>
 </body>
 </html>
