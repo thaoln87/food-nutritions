@@ -1,178 +1,199 @@
-<!DOCTYPE html>
-<html>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<head>
-    <title>Food Nutrition - Create Food</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
-</head>
-<body>
-<div class="container">
-{!! Form::open(['url' => '/food']) !!}
-{{ Html::tag('div','Enter Nutrition Information')}}
+@extends('layouts.app')
+@section('stylesheets')
+    <link href="{{ asset('css/food.css') }}" rel="stylesheet">
+@endsection
+@section('content')
+    <div class="container">
+    {!! Form::open(['url' => '/food']) !!}
+    {{ Html::tag('h1','Enter Nutrition Information')}}
 
-<!-- Brand Form Input -->
-    <div class='form-group'>
-        {!! Form::label('brand', 'Brand / Restaurant:') !!}
-        {!! Form::text('brand', null, ['class' => 'form-control']) !!}
-    </div>
-
-    <!-- Name Form Input -->
-    <div class='form-group'>
-        {!! Form::label('name', 'Food Name:') !!}
-        {!! Form::text('name', null, ['class' => 'form-control']) !!}
-    </div>
-
-    <!-- Description Form Input -->
-    <div class='form-group'>
-        {!! Form::label('description', 'Food Description:') !!}
-        {!! Form::text('description', null, ['placeholder' => 'Chicken Soup', 'class' => 'form-control']) !!}
-    </div>
-
-    {!! Html::tag('h2', 'Nutrition Facts') !!}
-
-    <div>
-        <!-- Serving size Form Input -->
-        <div class='form-group'>
-            {!! Form::label('serving', 'Serving size:') !!}
-            {!! Form::text('serving', null, ['placehodler' => 'e.g. 1/2 cup cooked', 'class' => 'form-control']) !!}
+    <!-- Brand Form Input -->
+        <div class='form-group row'>
+            <div class="col-md-2">
+                {!! Form::label('brand', 'Brand / Restaurant:') !!}
+            </div>
+            <div class="col-md-8">
+                {!! Form::text('brand', null, ['class' => 'form-control']) !!}
+            </div>
         </div>
 
-        <!-- Serving per container Form Input -->
-        <div class='form-group'>
-            {!! Form::label('serving_per_container', 'Serving per container: (about)') !!}
-            {!! Form::text('serving_per_container', null, ['class' => 'form-control']) !!}
+        <!-- Name Form Input -->
+        <div class='form-group row'>
+            <div class="col-md-2">
+                {!! Form::label('name', 'Food Name:') !!}
+            </div>
+            <div class="col-md-8">
+                {!! Form::text('name', null, ['class' => 'form-control']) !!}
+            </div>
         </div>
+
+        <!-- Description Form Input -->
+        <div class='form-group row'>
+            <div class="col-md-2">
+                {!! Form::label('description', 'Food Description:') !!}
+            </div>
+            <div class="col-md-8">
+                {!! Form::textarea('description', null, ['placeholder' => 'Chicken Soup', 'class' => 'form-control', 'rows' => 3]) !!}
+            </div>
+        </div>
+
+        {!! Html::tag('h2', 'Nutrition Facts') !!}
 
         <div>
-            {!! Html::tag('h3', 'Amount per serving') !!}
+            <!-- Serving size Form Input -->
+            <div class='form-group row'>
+                <div class='col-md-2'>{!!Form::label('serving', 'Serving size:') !!}</div>
+                <div class='col-md-8'>{!! Form::text('serving', null, ['placehodler' => 'e.g. 1/2 cup cooked', 'class' => 'form-control']) !!}</div>
+            </div>
+
+            <!-- Serving per container Form Input -->
+            <div class='form-group row'>
+                <div class='col-md-2'>{!!Form::label('serving_per_container', 'Serving per container: (about)') !!}</div>
+                <div class='col-md-8'>{!! Form::text('serving_per_container', null, ['class' => 'form-control']) !!}</div>
+            </div>
+
+            <div>
+                {!! Html::tag('h3', 'Amount per serving') !!}</div>
             <div>
                 <!-- Calories Form Input -->
-                <div class='form-group'>
-                    {!! Form::label('calories', 'Calories:') !!}
-                    {!! Form::text('calories', null, ['class' => 'form-control']) !!}
+                <div class='form-group row'>
+                    <div class='col-md-2'>{!!Form::label('calories', 'Calories:') !!}</div>
+                    <div class='col-md-8'>{!! Form::text('calories', null, ['class' => 'form-control']) !!}</div>
                 </div>
 
                 <!-- Total Fat Form Input -->
-                <div class='form-group'>
-                    {!! Form::label('total_fat', 'Total Fat:') !!}
-                    {!! Form::text('total_fat', null, ['class' => 'form-control']) !!} g
+                <div class='form-group row'>
+                    <div class='col-md-2'>{!!Form::label('total_fat', 'Total Fat:') !!}</div>
+                    <div class='col-md-8'>{!! Form::text('total_fat', null, ['class' => 'form-control']) !!}</div>
+                    <div class='col-md-2 food_unit'>g</div>
                 </div>
 
                 <!-- Saturated Form Input -->
-                <div class='form-group'>
-                    {!! Form::label('saturated', 'Saturated:') !!}
-                    {!! Form::text('saturated', null, ['class' => 'form-control']) !!} g
+                <div class='form-group row'>
+                    <div class='col-md-2'>{!!Form::label('saturated', 'Saturated:') !!}</div>
+                    <div class='col-md-8'>{!! Form::text('saturated', null, ['class' => 'form-control']) !!}</div>
+                    <div class='col-md-2 food_unit'>g</div>
                 </div>
 
                 <!-- Polyunsaturated Form Input -->
-                <div class='form-group'>
-                    {!! Form::label('polyunsaturated', 'Polyunsaturated:') !!}
-                    {!! Form::text('polyunsaturated', null, ['class' => 'form-control']) !!} g
+                <div class='form-group row'>
+                    <div class='col-md-2'>{!!Form::label('polyunsaturated', 'Polyunsaturated:') !!}</div>
+                    <div class='col-md-8'>{!! Form::text('polyunsaturated', null, ['class' => 'form-control']) !!}</div>
+                    <div class='col-md-2 food_unit'>g</div>
                 </div>
 
                 <!-- Monounsaturated Form Input -->
-                <div class='form-group'>
-                    {!! Form::label('monounsaturated', 'Monounsaturated:') !!}
-                    {!! Form::text('monounsaturated', null, ['class' => 'form-control']) !!} g
+                <div class='form-group row'>
+                    <div class='col-md-2'>{!!Form::label('monounsaturated', 'Monounsaturated:') !!}</div>
+                    <div class='col-md-8'>{!! Form::text('monounsaturated', null, ['class' => 'form-control']) !!}</div>
+                    <div class='col-md-2 food_unit'>g</div>
                 </div>
 
                 <!-- Trans Form Input -->
-                <div class='form-group'>
-                    {!! Form::label('trans', 'Trans:') !!}
-                    {!! Form::text('trans', null, ['class' => 'form-control']) !!} g
+                <div class='form-group row'>
+                    <div class='col-md-2'>{!!Form::label('trans', 'Trans:') !!}</div>
+                    <div class='col-md-8'>{!! Form::text('trans', null, ['class' => 'form-control']) !!}</div>
+                    <div class='col-md-2 food_unit'>g</div>
                 </div>
 
                 <!-- Cholesterol Form Input -->
-                <div class='form-group'>
-                    {!! Form::label('cholesterol', 'Cholesterol:') !!}
-                    {!! Form::text('cholesterol', null, ['class' => 'form-control']) !!}
+                <div class='form-group row'>
+                    <div class='col-md-2'>{!!Form::label('cholesterol', 'Cholesterol:') !!}</div>
+                    <div class='col-md-8'>{!! Form::text('cholesterol', null, ['class' => 'form-control']) !!}</div>
                 </div>
 
 
                 <!-- Sodium Form Input -->
-                <div class='form-group'>
-                    {!! Form::label('sodium', 'Sodium:') !!}
-                    {!! Form::text('sodium', null, ['class' => 'form-control']) !!} mg
+                <div class='form-group row'>
+                    <div class='col-md-2'>{!!Form::label('sodium', 'Sodium:') !!}</div>
+                    <div class='col-md-8'>{!! Form::text('sodium', null, ['class' => 'form-control']) !!}</div>
+                    <div class='col-md-2 food_unit'>mg</div>
                 </div>
 
                 <!-- Potassium Form Input -->
-                <div class='form-group'>
-                    {!! Form::label('potassium', 'Potassium:') !!}
-                    {!! Form::text('potassium', null, ['class' => 'form-control']) !!} mg
+                <div class='form-group row'>
+                    <div class='col-md-2'>{!!Form::label('potassium', 'Potassium:') !!}</div>
+                    <div class='col-md-8'>{!! Form::text('potassium', null, ['class' => 'form-control']) !!}</div>
+                    <div class='col-md-2 food_unit'>mg</div>
                 </div>
 
                 <!-- Total Carbs Form Input -->
-                <div class='form-group'>
-                    {!! Form::label('total_carbs', 'Total Carbs:') !!}
-                    {!! Form::text('total_carbs', null, ['class' => 'form-control']) !!} g
+                <div class='form-group row'>
+                    <div class='col-md-2'>{!!Form::label('total_carbs', 'Total Carbs:') !!}</div>
+                    <div class='col-md-8'>{!! Form::text('total_carbs', null, ['class' => 'form-control']) !!}</div>
+                    <div class='col-md-2 food_unit'>g</div>
                 </div>
 
                 <!-- Dietary Fiber Form Input -->
-                <div class='form-group'>
-                    {!! Form::label('dietary_fiber', 'Dietary Fiber:') !!}
-                    {!! Form::text('dietary_fiber', null, ['class' => 'form-control']) !!} g
+                <div class='form-group row'>
+                    <div class='col-md-2'>{!!Form::label('dietary_fiber', 'Dietary Fiber:') !!}</div>
+                    <div class='col-md-8'>{!! Form::text('dietary_fiber', null, ['class' => 'form-control']) !!}</div>
+                    <div class='col-md-2 food_unit'>g</div>
                 </div>
 
                 <!-- Sugars Form Input -->
-                <div class='form-group'>
-                    {!! Form::label('sugar', 'Sugars:') !!}
-                    {!! Form::text('sugar', null, ['class' => 'form-control']) !!} g
+                <div class='form-group row'>
+                    <div class='col-md-2'>{!!Form::label('sugar', 'Sugars:') !!}</div>
+                    <div class='col-md-8'>{!! Form::text('sugar', null, ['class' => 'form-control']) !!}</div>
+                    <div class='col-md-2 food_unit'>g</div>
                 </div>
 
                 <!-- Protein Form Input -->
-                <div class='form-group'>
-                    {!! Form::label('protein', 'Protein:') !!}
-                    {!! Form::text('protein', null, ['class' => 'form-control']) !!} g
+                <div class='form-group row'>
+                    <div class='col-md-2'>{!!Form::label('protein', 'Protein:') !!}</div>
+                    <div class='col-md-8'>{!! Form::text('protein', null, ['class' => 'form-control']) !!}</div>
+                    <div class='col-md-2 food_unit'>g</div>
                 </div>
             </div>
 
             <div>
                 <!-- Vitamin A Form Input -->
-                <div class='form-group'>
-                    {!! Form::label('vitamin_a', 'Vitamin A:') !!}
-                    {!! Form::text('vitamin_a', null, ['class' => 'form-control']) !!} %
+                <div class='form-group row'>
+                    <div class='col-md-2'>{!!Form::label('vitamin_a', 'Vitamin A:') !!}</div>
+                    <div class='col-md-8'>{!! Form::text('vitamin_a', null, ['class' => 'form-control']) !!}</div>
+                    <div class='col-md-2 food_unit'>%</div>
                 </div>
 
                 <!-- Vitamin C Form Input -->
-                <div class='form-group'>
-                    {!! Form::label('vitamin_c', 'Vitamin C:') !!}
-                    {!! Form::text('vitamin_c', null, ['class' => 'form-control']) !!} %
+                <div class='form-group row'>
+                    <div class='col-md-2'>{!!Form::label('vitamin_c', 'Vitamin C:') !!}</div>
+                    <div class='col-md-8'>{!! Form::text('vitamin_c', null, ['class' => 'form-control']) !!}</div>
+                    <div class='col-md-2 food_unit'>%</div>
                 </div>
 
                 <!-- Calcium Form Input -->
-                <div class='form-group'>
-                    {!! Form::label('calcium', 'Calcium:') !!}
-                    {!! Form::text('calcium', null, ['class' => 'form-control']) !!} %
+                <div class='form-group row'>
+                    <div class='col-md-2'>{!!Form::label('calcium', 'Calcium:') !!}</div>
+                    <div class='col-md-8'>{!! Form::text('calcium', null, ['class' => 'form-control']) !!}</div>
+                    <div class='col-md-2 food_unit'>%</div>
                 </div>
 
                 <!-- Iron Form Input -->
-                <div class='form-group'>
-                    {!! Form::label('iron', 'Iron:') !!}
-                    {!! Form::text('iron', null, ['class' => 'form-control']) !!} %
+                <div class='form-group row'>
+                    <div class='col-md-2'>{!!Form::label('iron', 'Iron:') !!}</div>
+                    <div class='col-md-8'>{!! Form::text('iron', null, ['class' => 'form-control']) !!}</div>
+                    <div class='col-md-2 food_unit'>%</div>
                 </div>
 
 
             </div>
         </div>
+        <div class='form-group row'>
+            <div class="col-md-8 col-md-offset-2">
+            {!! Html::tag('div', 'Percent Daily Value are based on a 2000 calorie diet. Your daily value may be higher or lower depending on your calorie needs') !!}
+
+            Help us to grow our food database
+            {!! Form::checkbox('published', 0, false, ['text' => 'Yes, let other members use this food']) !!}
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-8 col-md-offset-2">
+                {!! Form::submit('Save') !!}
+                {!! Form::submit('Save And Create Another') !!}
+                {!! Form::button('Cancel') !!}
+            </div>
+        </div>
+        {!! Form::close() !!}
     </div>
-    {!! Html::tag('div', 'Percent Daily Value are based on a 2000 calorie diet. Your daily value may be higher or lower depending on your calorie needs') !!}
-
-    Help us to grow our food database
-    {!! Form::checkbox('published', 0, false, ['text' => 'Yes, let other members use this food']) !!}
-
-    <div>
-        {!! Form::submit('Save') !!}
-        {!! Form::submit('Save And Create Another') !!}
-        {!! Form::button('Cancel') !!}
-    </div>
-
-    {!! Form::close() !!}
 </div>
-</body>
-</html>
+@endsection

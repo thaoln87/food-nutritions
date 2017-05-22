@@ -10,3 +10,8 @@ no-padding
 {
     padding: 0 !important;
 }
+.food_unit
+{
+    font-weight: bolder;
+    font-size: larger;
+}
