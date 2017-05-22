@@ -15,3 +15,8 @@ no-padding
     font-weight: bolder;
     font-size: larger;
 }
+.required
+{
+    font-weight: bolder;
+    color: red;
+}

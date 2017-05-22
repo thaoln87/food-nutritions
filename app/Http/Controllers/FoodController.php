@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Brand;
 use App\Food;
+use App\Http\Requests\FoodRequest;
 use Illuminate\Http\Request;
 
 class FoodController extends Controller
@@ -22,7 +23,7 @@ class FoodController extends Controller
      * @param Request $request
      * @return int
      */
-    public function store(Request $request)
+    public function store(FoodRequest $request)
     {
         $brandName = $request->get('brand');
         $brandId = null;
@@ -38,7 +39,7 @@ class FoodController extends Controller
 
         $food->save();
 
-        return "OK";
+        return view('Food.create');
     }
 
     public function search(Request $request)
