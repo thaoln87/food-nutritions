@@ -26,7 +26,8 @@ class FoodRequest extends FormRequest
         return [
             'name' => 'required',
             'serving' => 'required',
-            'serving_per_container' => 'required|numeric'
+            'serving_per_container' => 'required|numeric',
+            'image' => 'mimes:jpeg,png,gif'
         ];
     }
 }

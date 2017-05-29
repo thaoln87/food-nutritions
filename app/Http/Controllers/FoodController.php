@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Config;
 use App\Brand;
 use App\Food;
 use App\Http\Requests\FoodRequest;
@@ -9,6 +10,7 @@ use Illuminate\Http\Request;
 
 class FoodController extends Controller
 {
+    private $FOOD_IMAGE_DIR = 'images/foods/';
     /**
      * View for creating food
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -35,6 +37,11 @@ class FoodController extends Controller
 
         if($brandId != null) {
             $food->brand_id = $brandId;
+        }
+
+        if ($request->file('image') != null) {
+            $request->file('image')->store($this->FOOD_IMAGE_DIR);
+            $food->image = $this->FOOD_IMAGE_DIR . $request->file('image')->hashName();
         }
 
         $food->save();
