@@ -10,8 +10,8 @@ use Illuminate\Http\Request;
 
 class FoodController extends Controller
 {
-    private $FOOD_IMAGE_DIR = 'images/foods/';
-    private $PUBLIC_DIR = 'public/';
+    private $FOOD_IMAGE_DIR = 'foods/';
+    private $PUBLIC_DIR = 'public/images/';
 
     /**
      * View for creating food

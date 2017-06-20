@@ -219,8 +219,11 @@
                 $('#food_guaranteed').hide();
             }
             $('input[name="food_serving"]').val(food.serving);
-            if (food.image != '') {
-                $('#food_image').attr('src', '/storage/'+ food.image);
+            if (food.image != null && food.image != '') {
+                $('#food_image').attr('src', '/storage/images/'+ food.image);
+                $('#food_image').show();
+            } else {
+                $('#food_image').attr('src', '/storage/images/food_default.jpg');
                 $('#food_image').show();
             }
             $('#food_calories').text(food.calories);localStorage
