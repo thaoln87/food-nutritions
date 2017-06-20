@@ -11,6 +11,8 @@ use Illuminate\Http\Request;
 class FoodController extends Controller
 {
     private $FOOD_IMAGE_DIR = 'images/foods/';
+    private $PUBLIC_DIR = 'public/';
+
     /**
      * View for creating food
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -40,7 +42,7 @@ class FoodController extends Controller
         }
 
         if ($request->file('image') != null) {
-            $request->file('image')->store($this->FOOD_IMAGE_DIR);
+            $request->file('image')->store($this->PUBLIC_DIR . $this->FOOD_IMAGE_DIR);
             $food->image = $this->FOOD_IMAGE_DIR . $request->file('image')->hashName();
         }
 

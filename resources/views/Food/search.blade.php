@@ -49,6 +49,9 @@
                         <span id="food_name" class="text-success"> </span>
                         <span class="glyphicon glyphicon-ok-sign" id="food_guaranteed" style="display:none;"></span>
                     </div>
+                    <div class="form-group">
+                        <img id="food_image" class="image-small" style="display:none;" />
+                    </div>
                     <hr class="thick-3" />
                     <div class="form-group row">
                         <div class="col-xs-2">
@@ -216,7 +219,11 @@
                 $('#food_guaranteed').hide();
             }
             $('input[name="food_serving"]').val(food.serving);
-            $('#food_calories').text(food.calories);
+            if (food.image != '') {
+                $('#food_image').attr('src', '/storage/'+ food.image);
+                $('#food_image').show();
+            }
+            $('#food_calories').text(food.calories);localStorage
             $('#food_sodium').text(food.sodium);
             $('#food_total_fat').text(food.total_fat);
             $('#food_potassium').text(food.potassium);

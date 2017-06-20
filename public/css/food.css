@@ -20,3 +20,7 @@ no-padding
     font-weight: bolder;
     color: red;
 }
+.image-small
+{
+    width: 200px;
+}
