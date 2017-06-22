@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/common.css') }}" rel="stylesheet">
     @yield('stylesheets')
 
     <!-- Scripts -->
@@ -23,7 +24,7 @@
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
-                <div class="navbar-header">
+                <div class="navbar-header navbar-expand-height">
 
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
@@ -35,7 +36,8 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Food Nutritions') }}
+                        {!! Html::image('/storage/images/foodnut-logo.png', config('app.name', 'Food Nutritions'),
+                         ['class' => 'brand-logo']) !!}
                     </a>
                 </div>
 
