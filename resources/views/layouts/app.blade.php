@@ -36,7 +36,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {!! Html::image('/storage/images/foodnut-logo.png', config('app.name', 'Food Nutritions'),
+                        {!! Html::image('/storage/resources/foodnut-logo.png', config('app.name', 'Food Nutritions'),
                          ['class' => 'brand-logo']) !!}
                     </a>
                 </div>

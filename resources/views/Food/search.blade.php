@@ -223,7 +223,7 @@
                 $('#food_image').attr('src', '/storage/images/'+ food.image);
                 $('#food_image').show();
             } else {
-                $('#food_image').attr('src', '/storage/images/food_default.jpg');
+                $('#food_image').attr('src', '/storage/resources/food_default.jpg');
                 $('#food_image').show();
             }
             $('#food_calories').text(food.calories);localStorage
