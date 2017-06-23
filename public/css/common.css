@@ -1,3 +1,7 @@
+body{
+    font-family: 'Open Sans',sans-serif;
+}
+
 .brand-logo
 {
     width: 180px;
@@ -5,4 +9,55 @@
 .navbar-expand-height
 {
     min-height: 80px !important;
+}
+.navbar-right-expand
+{
+    margin-top: 15px;
+    font-size: larger;
+}
+.content-bg
+{
+    background: url('/storage/resources/homepage_header_bg.jpg') no-repeat top center;
+    display: block;
+    overflow: visible;
+    position: relative;
+    min-width: 1000px;
+    min-height: 600px;
+    padding: 0;
+    margin: 0;
+}
+
+.banner-content
+{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 400px;
+    font-weight: 300;
+    z-index: 1;
+    width: 1000px;
+    margin: auto;
+    padding: 100px 0 100px 0;
+}
+.banner-content h2{
+    float: left;
+    display: inline-block;
+    color: #fff;
+    font-size: 48px;
+    font-weight: lighter;
+    margin: 20px 0 0 10px;
+    width: 480px;
+    text-align: left;
+}
+
+.banner-content p{
+    color: #fff;
+    font-size: 18px;
+    float: left;
+    clear: left;
+    display: inline-block;
+    width: 430px;
+    text-align: left;
+    margin: 15px 0 0 10px;
+    line-height: 1.6em;
 }
