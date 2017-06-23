@@ -21,8 +21,9 @@ body{
     display: block;
     overflow: visible;
     position: relative;
-    min-width: 1000px;
+    width: 100%;
     min-height: 600px;
+    min-width: 1000px;
     padding: 0;
     margin: 0;
 }
