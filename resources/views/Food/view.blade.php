@@ -6,7 +6,12 @@
     <div class="container">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h1>Calories in <b>{{$food->name}}</b></h1>
+                <h1>
+                    Calories in <b>{{$food->name}}</b>
+                    <a href="/food/create" class="btn btn-primary pull-right">
+                        <span class="glyphicon glyphicon-plus"></span> Add new Food
+                    </a>
+                </h1>
             </div>
             <div class="panel-body">
                 <!-- View food nutritions -->
@@ -16,8 +21,10 @@
                             {!! Form::label('facts', __('food.nutrition_facts')) !!}
                         </div>
                         <div class="form-group">
-                            <h2><span id="food_name" class="text-primary">{{$food->name}} </span></h2>
-                            <span class="glyphicon glyphicon-ok-sign" id="food_guaranteed" style="{{ $food->guaranteed ? 'display:none' : ''}}"></span>
+                            <h2>
+                                <span id="food_name" class="text-primary">{{$food->name}} </span>
+                                <span class="glyphicon glyphicon-ok-sign" id="food_guaranteed" style="{{ $food->guaranteed ? 'display:none' : ''}}"></span>
+                            </h2>
                         </div>
                         <hr class="thick-3"/>
                         <div class="form-group row">
@@ -33,7 +40,7 @@
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <img id="food_image" class="pull-right img-responsive" src="/storage/{{$food->image == null ? 'resources/food_default.jpg' : 'images/foods/' . $food->image}}" />
+                        <img id="food_image" class="pull-right img-responsive" src="/storage/{{$food->image == null ? 'resources/food_default.jpg' : 'images/' . $food->image}}" />
                     </div>
                 </div>
                 <!-- Food nutrition facts -->

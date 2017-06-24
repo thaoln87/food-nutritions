@@ -48,7 +48,7 @@ class FoodController extends Controller
 
         $food->save();
 
-        return show($food->id);
+        return $this->show($food->id);
     }
 
     public function search(Request $request)
