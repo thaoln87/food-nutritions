@@ -21,7 +21,7 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <!-- Search matchings -->
                     <div class='form-group'>
                         {!! Form::label('matching', __('food.matching')) !!}
@@ -40,28 +40,34 @@
                     </div>
 
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <!-- View food nutritions -->
-                    <div class='form-group'>
-                        {!! Form::label('facts', __('food.nutrition_facts')) !!}
-                    </div>
-                    <div class="form-group">
-                        <span id="food_name" class="text-success"> </span>
-                        <span class="glyphicon glyphicon-ok-sign" id="food_guaranteed" style="display:none;"></span>
-                    </div>
-                    <div class="form-group">
-                        <img id="food_image" class="image-small" style="display:none;" />
-                    </div>
-                    <hr class="thick-3" />
-                    <div class="form-group row">
-                        <div class="col-xs-2">
-                            @lang('food.servings_field')
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class='form-group'>
+                                {!! Form::label('facts', __('food.nutrition_facts')) !!}
+                            </div>
+                            <div class="form-group">
+                                <span id="food_name" class="text-primary"> </span>
+                                <span class="glyphicon glyphicon-ok-sign" id="food_guaranteed" style="display:none;"></span>
+                            </div>
+                            <hr class="thick-3" />
+                            <div class="form-group row">
+                                <div class="col-xs-2">
+                                    @lang('food.servings_field')
+                                </div>
+                                <div class="col-xs-4">
+                                    {!! Form::text('food_serving', null, ['class' => 'form-control']) !!}
+                                </div>
+                                <div class="col-xs-6">
+                                    {!! Form::select('food_servings_options', ['100 g', '1 g'], 0, ['class' => 'form-control']) !!}
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-xs-4">
-                            {!! Form::text('food_serving', null, ['class' => 'form-control']) !!}
-                        </div>
-                        <div class="col-xs-6">
-                            {!! Form::select('food_servings_options', ['100 g', '1 g'], 0, ['class' => 'form-control']) !!}
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <img id="food_image" class="img-responsive" src="/storage/resources/food_default.jpg" />
+                            </div>
                         </div>
                     </div>
                     <!-- Food nutrition facts -->

@@ -219,7 +219,11 @@
 
                     <div class='form-group row'>
                         <div class="col-md-8 col-md-offset-2">
-                            {!! Html::tag('div', 'Percent Daily Value are based on a 2000 calorie diet. Your daily value may be higher or lower depending on your calorie needs') !!}
+                            <p>
+                                <b>
+                                Percent Daily Value are based on a 2000 calorie diet. Your daily value may be higher or lower depending on your calorie needs
+                                </b>
+                            </p>
 
                             Help us to grow our food database
                             {!! Form::checkbox('published', 0, false, ['text' => 'Yes, let other members use this food']) !!}
