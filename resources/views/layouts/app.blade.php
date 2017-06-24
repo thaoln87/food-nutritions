@@ -11,6 +11,7 @@
     <title>{{ config('app.name', 'Food Nutritions') }}</title>
 
     <!-- Styles -->
+    <link rel="icon" type="image/png" href="/storage/resources/icon.png" sizes="32x32">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/common.css') }}" rel="stylesheet">
     @yield('stylesheets')
