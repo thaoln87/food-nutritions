@@ -14,7 +14,9 @@ body{
 {
     margin-top: 15px;
     font-size: larger;
+    font-weight: bolder;
 }
+
 .content-bg
 {
     background: url('/storage/resources/homepage_header_bg.jpg') no-repeat top center;

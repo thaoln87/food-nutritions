@@ -14,6 +14,7 @@
     <link rel="icon" type="image/png" href="/storage/resources/icon.png" sizes="32x32">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/common.css') }}" rel="stylesheet">
+    <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
     @yield('stylesheets')
 
     <!-- Scripts -->
@@ -44,12 +45,14 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
+                    <ul class="nav navbar-nav navbar-right-expand">
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right navbar-right-expand">
+                        <li><a href="#">@lang('home.about')</a></li>
+                        <li><a href="#">@lang('home.food')</a></li>
+                        <li><a href="#">@lang('home.dietary')</a></li>
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
@@ -81,6 +84,12 @@
         </nav>
 
         @yield('content')
+        <footer class="footer">
+            <div class="container">
+                <p></p>
+                <p class="text-muted text-center">Food Nutritions &copy; 2017</p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>

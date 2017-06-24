@@ -11,4 +11,7 @@ return [
     'login' => 'Login',
     'signup' => 'Sign Up with Email',
     'had_account' => 'Already have an account?',
+    'about' => 'About',
+    'food' => 'Food',
+    'dietary' => 'Dietary'
 ];
