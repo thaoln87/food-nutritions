@@ -21,6 +21,7 @@ Route::post('/food', "FoodController@store");
 Route::get('/food/search', "FoodController@search");
 Route::get('/food/search/{id}', "FoodController@retrieve");
 Route::post('/food/search/', "FoodController@search");
+Route::get('/food/{id}', "FoodController@show");
 \Illuminate\Support\Facades\Auth::routes();
 
 Route::get('/home', 'HomeController@index');

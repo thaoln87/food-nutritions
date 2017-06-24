@@ -48,7 +48,7 @@ class FoodController extends Controller
 
         $food->save();
 
-        return view('Food.create');
+        return show($food->id);
     }
 
     public function search(Request $request)
@@ -63,6 +63,11 @@ class FoodController extends Controller
         }
 
         return view('Food.search', ['search_text'=>$keyword, 'matchings'=> $foods]);
+    }
+
+    public function show($id)
+    {
+        return view('Food.view', ['food' => $this->retrieve($id)]);
     }
 
     public function retrieve($id) {
