@@ -5,9 +5,9 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Register</div>
+                    <div class="panel-heading">@lang('profile.user_information')</div>
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="/user/profile">
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -15,7 +15,7 @@
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control" name="name"
-                                           value="{{ old('name') }}" required autofocus>
+                                           value="{{ $user->name }}" required autofocus>
 
                                     @if ($errors->has('name'))
                                         <span class="help-block">
@@ -29,8 +29,8 @@
                                 <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" class="form-control" name="email"
-                                           value="{{ old('email') }}" required>
+                                    <input id="email" type="email" class="form-control" name="email"
+                                           value="{{ $user->email }}" required>
 
                                     @if ($errors->has('email'))
                                         <span class="help-block">
@@ -53,15 +53,6 @@
                                     @endif
                                 </div>
                             </div>
-
-                            <div class="form-group">
-                                <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-
-                                <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control"
-                                           name="password_confirmation" required>
-                                </div>
-                            </div>
                             <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
                                 <label for="email" class="col-md-4 control-label">Address</label>
 
@@ -71,7 +62,7 @@
                                         <i class="glyphicon glyphicon-home"></i>
                                         </span>
                                     <input id="address" type="text" class="form-control" name="address"
-                                           value="{{ old('address') }}" required>
+                                           value="{{ $user->address }}" required>
                                     </div>
                                     @if ($errors->has('address'))
                                         <span class="help-block">
@@ -88,7 +79,7 @@
                                             <i class="glyphicon glyphicon-phone"></i>
                                         </span>
                                         <input id="phone_number" maxlength="11" name="phone_number" placeholder="090xxxxxxx"
-                                               class="form-control input-md ac_mobile" type="number" required>
+                                               class="form-control input-md ac_mobile" value="{{$user->phone_number}}" type="number" required>
                                     </div>
                                     @if ($errors->has('phone_number'))
                                         <span class="help-block">
@@ -106,7 +97,7 @@
                                         <i class="glyphicon glyphicon-calendar"></i>
                                         </span>
                                         <input id="birthday" type="date" class="form-control" name="birthday"
-                                               value="{{ old('birthday') }}" required>
+                                               value="{{ $user->birthday }}" required>
                                     </div>
                                     @if ($errors->has('birthday'))
                                         <span class="help-block">
@@ -124,7 +115,7 @@
                                         <i class="glyphicon glyphicon-grain"></i>
                                         </span>
                                         <input id="height" max="250" min="140" type="number" class="form-control" name="height"
-                                               value="{{ old('height') }}" required>
+                                               value="{{ $user->height }}" required>
                                     </div>
                                     @if ($errors->has('height'))
                                         <span class="help-block">
@@ -142,7 +133,7 @@
                                         <i class="glyphicon glyphicon-scale"></i>
                                         </span>
                                         <input id="weight" max="150" min="30" type="number" step="0.1" class="form-control" name="weight"
-                                               value="{{ old('weight') }}" required>
+                                               value="{{ $user->weight }}" required>
                                     </div>
                                     @if ($errors->has('weight'))
                                         <span class="help-block">
@@ -160,7 +151,7 @@
                                         <i class="glyphicon glyphicon-scale text-primary"></i>
                                         </span>
                                         <input id="expected_weight" max="150" min="30" type="number" step="0.1" class="form-control" name="expected_weight"
-                                               value="{{ old('expected_weight') }}" required>
+                                               value="{{ $user->expected_weight }}" required>
                                     </div>
                                     @if ($errors->has('expected_weight'))
                                         <span class="help-block">
@@ -173,8 +164,11 @@
                                 <div class="form-group">
                                     <div class="col-md-6 col-md-offset-4">
                                         <button type="submit" class="btn btn-primary">
-                                            Register
+                                            @lang('profile.update')
                                         </button>
+                                        <a href="{{ redirect()->back()->getTargetUrl() }}" class="btn btn-default">
+                                            @lang('profile.cancel')
+                                        </a>
                                     </div>
                                 </div>
                         </form>

@@ -51,7 +51,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right navbar-right-expand">
                         <li><a href="#">@lang('home.about')</a></li>
-                        <li><a href="#">@lang('home.food')</a></li>
+                        <li><a href="/food/search">@lang('home.food')</a></li>
                         <li><a href="#">@lang('home.dietary')</a></li>
                         <!-- Authentication Links -->
                         @if (Auth::guest())
@@ -64,6 +64,9 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="/user/profile">@lang('home.profile')</a>
+                                    </li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
@@ -88,6 +91,7 @@
             <div class="container">
                 <p></p>
                 <p class="text-muted text-center">Food Nutritions &copy; 2017</p>
+                <p class="text-muted text-center">Lê Ngọc Thảo - 512x1031</p>
             </div>
         </footer>
     </div>

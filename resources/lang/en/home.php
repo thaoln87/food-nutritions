@@ -13,5 +13,6 @@ return [
     'had_account' => 'Already have an account?',
     'about' => 'About',
     'food' => 'Food',
-    'dietary' => 'Dietary'
+    'dietary' => 'Dietary',
+    'profile' => 'Profile'
 ];

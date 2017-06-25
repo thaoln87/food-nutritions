@@ -22,6 +22,8 @@ Route::get('/food/search', "FoodController@search");
 Route::get('/food/search/{id}', "FoodController@retrieve");
 Route::post('/food/search/', "FoodController@search");
 Route::get('/food/{id}', "FoodController@show");
+Route::get('user/profile', 'Auth\ProfileController@profile');
+Route::post('user/profile', 'Auth\ProfileController@update');
 \Illuminate\Support\Facades\Auth::routes();
 
 Route::get('/home', 'HomeController@index');
